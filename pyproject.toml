@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "model2obs-mcp"
+version = "0.1.0"
+description = "MCP server for model2obs: interpolate MOM6/ROMS output to CrocoLake observations with DART and analyse the misfits"
+requires-python = ">=3.11"
+dependencies = ["fastmcp>=2.0", "pyyaml"]
+
+[project.scripts]
+model2obs-mcp = "model2obs_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["model2obs_mcp"]
